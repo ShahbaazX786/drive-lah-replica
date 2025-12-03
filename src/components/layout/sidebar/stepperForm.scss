@@ -1,0 +1,49 @@
+@use "@/styles/_variables.scss" as vars;
+
+.stepper-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    max-width: 200px;
+    margin-left: 50px;
+}
+
+.step {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: vars.$font-stack;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 10px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.step-pending {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.step-active {
+    color: #00A3AD;
+    border-left: 5px solid #00A3AD;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.step-completed {
+    color: #026786;
+
+    .step-check {
+        color: #026786;
+        font-size: 20px;
+    }
+}
+
