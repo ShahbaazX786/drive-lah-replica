@@ -47,7 +47,8 @@
         justify-content: start;
         align-items: start;
         gap: 5px;
-        img{
+
+        img {
             width: 14px;
             height: 14px;
         }
@@ -69,9 +70,11 @@
     border-radius: 8px;
 
     p {
+        text-align: left;
         font-size: 22px;
         color: vars.$secondary-color;
         margin-bottom: 10px;
+        font-weight: 500;
     }
 
     ul>li {
@@ -80,9 +83,23 @@
         color: vars.$default-color;
         margin-bottom: 10px;
     }
+
+    &.selected {
+        border-color: vars.$button-border-color;
+        background: vars.$button-yellow;
+    }
+}
+
+#plan-price-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: baseline;
+    width: 100%;
 }
 
 .plan-price {
+    text-align: left;
     color: vars.$secondary-color;
     font-weight: 900;
     font-size: 22px;

@@ -1,10 +1,10 @@
 import { subscriptionPlans as plans } from "@/assets/constants";
+import lock from "@/assets/icons/Lock.svg";
+import locationMarker from "@/assets/icons/map-marker.svg";
+import mileage from "@/assets/icons/mileage.svg";
+import SelectableOption from "../ui/selectable-button";
 import CardDetails from "./CardDetails";
 import "./Subscription.scss";
-import SelectableOption from "../ui/selectable-button";
-import locationMarker from "@/assets/icons/map-marker.svg";
-import lock from "@/assets/icons/Lock.svg";
-import mileage from "@/assets/icons/mileage.svg";
 
 const Subscription = () => {
   return (
@@ -19,7 +19,7 @@ const Subscription = () => {
         <h2>Select your plan</h2>
         <section id="subscription-plans">
           {plans.map((plan) => (
-            <div key={plan.id} id="subscription-card">
+            <button key={plan.id} id="subscription-card">
               <p>{plan.plan}</p>
               <ul>
                 {plan.features.map((feature, index) => (
@@ -31,14 +31,16 @@ const Subscription = () => {
                   </li>
                 ))}
               </ul>
-              {plan.price === 0 && <span className="plan-price">Free</span>}
-              {plan.price !== 0 && (
-                <div>
-                  <span className="plan-price">${plan.price}</span>
-                  <span className="plan-frequency">/month</span>
-                </div>
-              )}
-            </div>
+              <div id="plan-price-wrapper">
+                {plan.price === 0 && <span className="plan-price">Free</span>}
+                {plan.price !== 0 && (
+                  <>
+                    <span className="plan-price">${plan.price}</span>
+                    <span className="plan-frequency">/month</span>
+                  </>
+                )}
+              </div>
+            </button>
           ))}
         </section>
       </section>

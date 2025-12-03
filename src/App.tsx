@@ -1,3 +1,4 @@
+import Footer from "./components/layout/footer/footer";
 import Header from "./components/layout/header/header";
 import StepperForm from "./components/layout/sidebar/stepperForm";
 import Subscription from "./components/subscription/Subscription";
@@ -10,6 +11,7 @@ function App() {
         <StepperForm />
         <Subscription />
       </div>
+      <Footer />
     </>
   );
 }
