@@ -4,7 +4,7 @@ header {
     font-family: vars.$font-stack;
     background: vars.$primary-color;
     color: white;
-    padding: 16px;
+    padding: 16px 40px;
 }
 
 .brand-logo{
@@ -17,6 +17,10 @@ nav ul {
     margin: 0;
     padding: 0;
     font-weight: 500;
+    li{
+
+        margin-right: 20px;
+    }
 }
 
 .avatar-img{
