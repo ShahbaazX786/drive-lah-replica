@@ -1,0 +1,14 @@
+@import url("https://use.typekit.net/yts6eyx.css");
+// <link rel="stylesheet" href="https://use.typekit.net/yts6eyx.css">
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-row-sbc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
