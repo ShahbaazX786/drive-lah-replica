@@ -1,0 +1,41 @@
+@use "@/styles/_variables.scss" as vars;
+
+.card-input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid vars.$disabled-color;
+    padding: 15px 20px;
+    border-radius: 6px;
+    gap: 12px;
+    width: 100%;
+    max-width: 420px;
+    background: white;
+
+    input {
+        border: none;
+        outline: none;
+        font-size: 14px;
+        color: vars.$disabled-color;
+        flex: 1;
+        font-size: 18px;
+
+        &::placeholder {
+            color: vars.$disabled-color;
+        }
+    }
+}
+
+.card-icon {
+    color: vars.$disabled-color;
+    font-size: 18px;
+}
+
+.expiry {
+    max-width: 60px;
+    text-align: center;
+}
+
+.cvc {
+    max-width: 50px;
+    text-align: center;
+}
