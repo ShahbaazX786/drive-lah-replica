@@ -40,6 +40,18 @@
         font-size: 22px;
         color: vars.$default-color;
     }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        gap: 5px;
+        img{
+            width: 14px;
+            height: 14px;
+        }
+    }
 }
 
 #subscription-plans {
@@ -146,6 +158,6 @@
     }
 
     a {
-        color:vars.$primary-color;
+        color: vars.$primary-color;
     }
 }

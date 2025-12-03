@@ -2,6 +2,9 @@ import { subscriptionPlans as plans } from "@/assets/constants";
 import CardDetails from "./CardDetails";
 import "./Subscription.scss";
 import SelectableOption from "../ui/selectable-button";
+import locationMarker from "@/assets/icons/map-marker.svg";
+import lock from "@/assets/icons/Lock.svg";
+import mileage from "@/assets/icons/mileage.svg";
 
 const Subscription = () => {
   return (
@@ -19,8 +22,13 @@ const Subscription = () => {
             <div key={plan.id} id="subscription-card">
               <p>{plan.plan}</p>
               <ul>
-                {plan.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
+                {plan.features.map((feature, index) => (
+                  <li key={feature}>
+                    {index === 0 && <img src={locationMarker} />}
+                    {index === 1 && <img src={mileage} />}
+                    {index === 2 && <img src={lock} />}
+                    {feature}
+                  </li>
                 ))}
               </ul>
               {plan.price === 0 && <span className="plan-price">Free</span>}
@@ -39,7 +47,7 @@ const Subscription = () => {
         <p>Select add-ons for your subscription</p>
         <section id="subscription-buttons">
           <SelectableOption label="BYO secondary GPS - $5/month" />
-          <SelectableOption label="BYO lockbox - $10/month" />
+          <SelectableOption label="BYO lockbox - $10/month" comingSoon />
         </section>
 
         <section id="subscription-card-details">

@@ -3,21 +3,29 @@ import "./selectable-button.scss";
 
 interface Props {
   label: string;
+  comingSoon?: boolean;
 }
 
-const SelectableButton = ({ label }: Props) => {
+const SelectableButton = ({ label, comingSoon }: Props) => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <button
-      type="button"
-      className={`option-btn ${selected ? "selected" : ""}`}
-      onClick={() => setSelected((prev) => !prev)}
-    >
-      <span>{label}</span>
+    <div className="option-wrapper">
+      {comingSoon && <span className="coming-soon">Coming soon</span>}
 
-      <span className={`circle ${selected ? "circle-selected" : ""}`}></span>
-    </button>
+      <button
+        type="button"
+        className={`option-btn ${selected ? "selected" : ""} ${
+          comingSoon ? "disabled" : ""
+        }`}
+        onClick={() => !comingSoon && setSelected((prev) => !prev)}
+        disabled={comingSoon}
+      >
+        <span>{label}</span>
+
+        <span className={`circle ${selected ? "circle-selected" : ""}`}></span>
+      </button>
+    </div>
   );
 };
 
