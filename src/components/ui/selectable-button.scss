@@ -1,0 +1,38 @@
+@use "@/styles/_variables.scss" as vars;
+
+.option-btn {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid vars.$button-border-color;
+    border-radius: 8px;
+    background: vars.$button-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: vars.$primary-color;
+    transition: 0.25s ease;
+
+    &:hover {
+        background: vars.$button-color;
+    }
+
+    &.selected {
+        border-color: vars.$button-border-color;
+        background: vars.$button-color;
+    }
+}
+
+.circle {
+    width: 18px;
+    height: 18px;
+    border: 2px solid vars.$secondary-color;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.circle-selected {
+    background: vars.$secondary-color;
+    border-color: vars.$secondary-color;
+}
