@@ -85,4 +85,37 @@ const stepperForm = [
   },
 ];
 
-export { navMenu, stepperForm };
+const subscriptionPlans = [
+  {
+    id: "just-mates",
+    plan: "Just mates",
+    features: [
+      "Bring your own GPS",
+      "Mileage reporting to be done by you",
+      "In-person key handover to guests",
+    ],
+    price: 0,
+  },
+  {
+    id: "good-mates",
+    plan: "Good mates",
+    features: [
+      "Primary GPS included",
+      "Automated mileage calculations",
+      "In-person key handover to guests",
+    ],
+    price: 10,
+  },
+  {
+    id: "best-mates",
+    plan: "Best mates",
+    features: [
+      "Keyless access technology",
+      "Automated mileage calculations",
+      "Remote handover to guests",
+    ],
+    price: 30,
+  },
+];
+
+export { navMenu, stepperForm, subscriptionPlans };
