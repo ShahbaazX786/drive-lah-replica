@@ -1,0 +1,151 @@
+@use "@/styles/_variables.scss" as vars;
+
+#subscription-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: start;
+    background: #ffffff;
+    padding: 30px 40px;
+    border: 1px solid #00000014;
+    border-radius: 8px;
+    font-family: vars.$font-stack;
+
+    h1 {
+        color: vars.$secondary-color;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    #subscription-heading {
+        font-weight: 500;
+        color: vars.$default-color;
+        font-size: 20px;
+    }
+}
+
+
+#subscription-plan-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+    width: 100%;
+
+    h2 {
+        font-weight: 500;
+        font-size: 22px;
+        color: vars.$default-color;
+    }
+}
+
+#subscription-plans {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 15px;
+}
+
+#subscription-card {
+    background: vars.$button-color;
+    padding: 15px;
+    border: 1px solid vars.$button-border-color;
+    border-radius: 8px;
+
+    p {
+        font-size: 22px;
+        color: vars.$secondary-color;
+        margin-bottom: 10px;
+    }
+
+    ul>li {
+        list-style: none;
+        font-size: 15px;
+        color: vars.$default-color;
+        margin-bottom: 10px;
+    }
+}
+
+.plan-price {
+    color: vars.$secondary-color;
+    font-weight: 900;
+    font-size: 22px;
+}
+
+.plan-frequency {
+    color: vars.$secondary-color;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+
+#subscription-addons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    font-family: vars.$font-stack;
+    gap: 20px;
+    width: 100%;
+
+    p {
+        font-size: 22px;
+        font-weight: 500;
+        color: vars.$default-color;
+        margin-top: 20px;
+    }
+
+    button {
+        color: vars.$secondary-color;
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    #subscription-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: start;
+    }
+}
+
+#subscription-card-details {
+    font-family: vars.$font-stack;
+    font-size: 22px;
+    font-weight: 500;
+    color: vars.$default-color;
+    width: 100%;
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    span {
+        margin-top: 10px;
+        color: vars.$disabled-color;
+        font-size: 15px;
+        font-weight: 500;
+    }
+}
+
+#subscription-help {
+    font-family: vars.$font-stack;
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+
+    p {
+        color: vars.$default-color;
+        margin-bottom: 20px;
+    }
+
+    a {
+        color:vars.$primary-color;
+    }
+}
