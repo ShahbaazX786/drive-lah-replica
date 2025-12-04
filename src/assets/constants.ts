@@ -118,4 +118,11 @@ const subscriptionPlans = [
   },
 ];
 
-export { navMenu, stepperForm, subscriptionPlans };
+const DeviceTypeMap: Record<number, string> = {
+  1: "Primary GPS",
+  2: "Secondary GPS",
+  3: "Drive mate Go",
+  4: "Lockbox",
+};
+
+export { navMenu, stepperForm, subscriptionPlans, DeviceTypeMap };
