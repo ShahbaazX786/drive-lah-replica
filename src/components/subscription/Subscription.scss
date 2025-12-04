@@ -1,6 +1,8 @@
 @use "@/styles/_variables.scss" as vars;
 
 #subscription-wrapper {
+    width: 100%;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -21,7 +23,7 @@
 
     #subscription-heading {
         font-weight: 500;
-        color: vars.$default-color;
+        color: vars.$tertiary-color;
         font-size: 20px;
     }
 }
@@ -38,7 +40,7 @@
     h2 {
         font-weight: 500;
         font-size: 22px;
-        color: vars.$default-color;
+        color: vars.$tertiary-color;
     }
 
     li {
@@ -68,6 +70,8 @@
     padding: 15px;
     border: 1px solid vars.$button-border-color;
     border-radius: 8px;
+    cursor: pointer;
+        transition: all 0.25s ease;
 
     p {
         text-align: left;
@@ -80,13 +84,20 @@
     ul>li {
         list-style: none;
         font-size: 15px;
-        color: vars.$default-color;
+        color: vars.$tertiary-color;
         margin-bottom: 10px;
     }
 
     &.selected {
-        border-color: vars.$button-border-color;
-        background: vars.$button-yellow;
+        border-color: vars.$primary-color;
+        background: #00A3AD0D; 
+        box-shadow: 0 0 0 1px vars.$primary-color;
+    
+        p,
+        .plan-price,
+        .plan-frequency {
+            color: vars.$secondary-color;
+        }
     }
 }
 
@@ -124,7 +135,7 @@
     p {
         font-size: 22px;
         font-weight: 500;
-        color: vars.$default-color;
+        color: vars.$tertiary-color;
         margin-top: 20px;
     }
 
@@ -148,7 +159,7 @@
     font-family: vars.$font-stack;
     font-size: 22px;
     font-weight: 500;
-    color: vars.$default-color;
+    color: vars.$tertiary-color;
     width: 100%;
 
     p {
@@ -157,7 +168,7 @@
 
     span {
         margin-top: 10px;
-        color: vars.$disabled-color;
+        color: vars.$placeholder-color;
         font-size: 15px;
         font-weight: 500;
     }
@@ -170,7 +181,7 @@
     width: 100%;
 
     p {
-        color: vars.$default-color;
+        color: vars.$tertiary-color;
         margin-bottom: 20px;
     }
 

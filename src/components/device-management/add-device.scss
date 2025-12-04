@@ -18,6 +18,14 @@
         width: 100%;
     }
 
+    #device-type-input, #device-form-serial-input label{
+        font-family: vars.$font-stack;
+        font-weight: 300;
+        font-size: 16px;
+        color: vars.$tertiary-color;
+
+    }
+
     .device-type-input,
     .device-serial-input {
         text-align: left;
@@ -28,6 +36,7 @@
         border-radius: 4px;
         font-size: 20px;
         color: vars.$tertiary-color;
+        margin-top: 5px;
 
         &::placeholder {
             color: vars.$placeholder-color;
@@ -37,6 +46,8 @@
             width: 100%;
         }
     }
+
+
 
     #device-type-switch {
         display: flex;
@@ -53,6 +64,7 @@
 
         h3 {
             font-size: 20px;
+            font-weight: 500;
             color: vars.$tertiary-color;
         }
 
@@ -74,10 +86,15 @@ h2 {
     color: vars.$tertiary-color;
     margin-bottom: 15px;
     margin-top: 30px;
+    font-weight: 500;
 }
 
 #device-form {
     #device-form-image-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
         label {
             font-family: vars.$font-stack;
             color: vars.$tertiary-color;
@@ -100,6 +117,10 @@ h2 {
 
             &:hover {
                 border-color: vars.$primary-color;
+            }
+
+            @media (max-width: 768px) {
+                width: 100%;
             }
         }
 
