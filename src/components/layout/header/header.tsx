@@ -1,24 +1,18 @@
 import { navMenu } from "@/assets/constants";
 import BrandLogo from "@/assets/icons/DriveLah.png";
-import { useState } from "react";
+import { HiOutlineUserCircle } from "react-icons/hi2";
+import { RxHamburgerMenu } from "react-icons/rx";
 import "./header.scss";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen((prev) => !prev);
-
   return (
-    <header className="flex-row-sbc">
+    <header>
+      <RxHamburgerMenu size={28} className="mobile-menu" />
       <div>
         <img src={BrandLogo} alt="Drive Lah Logo" className="brand-logo" />
       </div>
-
-      <div className={`nav ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
-        <span />
-        <span />
-        <span />
-      </div>
-      <nav className="flex-row-sbc gap">
+      <HiOutlineUserCircle size={28} className="mobile-menu" />
+      <nav className="flex-row-sbc gap hide-mobile">
         <ul className="flex-row-sbc gap">
           {navMenu.map((item) => (
             <li key={item.id}>{item.title}</li>
