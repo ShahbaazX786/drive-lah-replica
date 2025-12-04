@@ -16,7 +16,8 @@
         width: 100%;
     }
 
-    #device-type-input, #device-form-serial-input label{
+    #device-type-input,
+    #device-form-serial-input label {
         font-family: vars.$font-stack;
         font-weight: 300;
         font-size: 16px;
@@ -37,7 +38,8 @@
         margin-top: 5px;
         cursor: auto;
         user-select: none;
-        &:focus{
+
+        &:focus {
             border: 2px solid vars.$primary-color;
             outline: none;
         }
@@ -50,8 +52,6 @@
             width: 100%;
         }
     }
-
-
 
     #device-type-switch {
         display: flex;
@@ -78,6 +78,7 @@
             font-weight: 500;
             color: vars.$tertiary-color;
         }
+
     }
 
     @media (max-width: 768px) {
@@ -99,6 +100,7 @@ h2 {
         flex-direction: column;
         justify-content: start;
         align-items: start;
+
         label {
             font-family: vars.$font-stack;
             color: vars.$tertiary-color;
@@ -109,9 +111,9 @@ h2 {
         .uploadBox {
             width: 335px;
             height: 160px;
-            border: 2px solid #c7c7c7;
+            border: 2px solid vars.$button-border-color;
             background: vars.$button-upload-white;
-            border-radius: 10px;
+            border-radius: 4px;
             padding: 30px;
             text-align: center;
             cursor: pointer;

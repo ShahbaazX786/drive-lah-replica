@@ -7,6 +7,7 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
 
   const deviceType = DeviceTypeMap[deviceId];
+  const isType4 = deviceId === 4;
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -35,31 +36,33 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
           />
         </section>
 
-        <section id="device-type-switch">
-          <div className="top-row">
-            <h3>Bringing your own device?</h3>
+        {!isType4 && (
+          <section id="device-type-switch">
+            <div className="top-row">
+              <h3>Bringing your own device?</h3>
 
-            <label className="switch">
-              <input
-                type="checkbox"
-                checked={isBringingOwnDevice}
-                onChange={() => setIsBringingOwnDevice((prev) => !prev)}
-              />
-              <span className="slider"></span>
-            </label>
-          </div>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={isBringingOwnDevice}
+                  onChange={() => setIsBringingOwnDevice((prev) => !prev)}
+                />
+                <span className="slider"></span>
+              </label>
+            </div>
 
-          <p className="hint">
-            Toggle this on if you're bringing your own device. Leave it off if
-            Drive Mate is to provide the device.
-          </p>
-        </section>
+            <p className="hint">
+              Toggle this on if you're bringing your own device. Leave it off if
+              Drive Mate is to provide the device.
+            </p>
+          </section>
+        )}
       </section>
 
       <section
         id="device-form"
         className={`device-form-container ${
-          isBringingOwnDevice ? "show" : "hide"
+          isType4 ? "show" : isBringingOwnDevice ? "show" : "hide"
         }`}
       >
         <section id="device-form-serial-input">
@@ -91,7 +94,8 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
           </button>
         </section>
       </section>
-      {deviceId !== 4 && <hr className="separator" />}
+
+      {!isType4 && <hr className="separator" />}
     </section>
   );
 };
