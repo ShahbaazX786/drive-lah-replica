@@ -163,3 +163,23 @@ h2 {
 .switch input:checked+.slider:before {
     transform: translateX(22px);
 }
+
+
+.device-form-container {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.device-form-container.show {
+    height: auto;
+    opacity: 1;
+    padding-top: 20px;
+}
+
+.device-form-container.hide {
+    height: 0;
+    opacity: 0;
+    padding-top: 0;
+}

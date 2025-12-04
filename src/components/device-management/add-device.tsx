@@ -1,9 +1,12 @@
+import { DeviceTypeMap } from "@/assets/constants";
 import { useState } from "react";
 import "./add-device.scss";
 
-const AddDevice = () => {
+const AddDevice = ({ deviceId }: { deviceId: number }) => {
   const [isBringingOwnDevice, setIsBringingOwnDevice] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
+
+  const deviceType = DeviceTypeMap[deviceId];
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -19,14 +22,14 @@ const AddDevice = () => {
 
   return (
     <section id="device-section-wrapper">
-      <h2>Device 1</h2>
+      <h2>Device {deviceId}</h2>
       <section id="device-byod">
         <section id="device-type-input">
           <label htmlFor="device">Device type</label>
           <input
             readOnly
             type="text"
-            value={"Primary GPS"}
+            value={deviceType}
             name="device"
             className="device-type-input"
           />
@@ -53,7 +56,12 @@ const AddDevice = () => {
         </section>
       </section>
 
-      <section id="device-form">
+      <section
+        id="device-form"
+        className={`device-form-container ${
+          isBringingOwnDevice ? "show" : "hide"
+        }`}
+      >
         <section id="device-form-serial-input">
           <label htmlFor="device-serial-number">Serial number</label>
           <input
@@ -83,7 +91,7 @@ const AddDevice = () => {
           </button>
         </section>
       </section>
-      <hr className="separator" />
+      {deviceId !== 4 && <hr className="separator" />}
     </section>
   );
 };
