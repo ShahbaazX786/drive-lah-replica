@@ -1,0 +1,25 @@
+@use "@/styles/_variables.scss" as vars;
+
+.wrapper {
+    width: 100%;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border: 1px solid #00000014;
+    border-radius: 10px;
+    font-family: vars.$font-stack;
+
+    h1 {
+        color: vars.$secondary-color;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+.subtitle {
+    color: vars.$tertiary-color;
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
