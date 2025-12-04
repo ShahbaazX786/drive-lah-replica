@@ -22,3 +22,19 @@
         cursor: pointer;
     }
 }
+
+
+@media (max-width:768px) {
+    #bottom-navigation{
+        width: 100%;
+        padding: 6px 20px;
+        border-top: 1px solid black;
+        justify-content: center;
+        button{
+            padding: 14px 40px;
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
