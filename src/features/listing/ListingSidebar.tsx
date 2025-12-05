@@ -1,4 +1,4 @@
-import { stepperForm as initialSteps } from "@/assets/constants";
+import { stepperForm as initialSteps } from "@/utils/constants";
 import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";

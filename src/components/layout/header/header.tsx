@@ -1,4 +1,4 @@
-import { navMenu } from "@/assets/constants";
+import { navMenu } from "@/utils/constants";
 import BrandLogo from "@/assets/icons/DriveLah.png";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";

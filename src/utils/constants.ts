@@ -75,7 +75,7 @@ const stepperForm = [
     id: 10,
     title: "Device",
     route: "/device",
-    status: "pending",
+    status: "completed",
   },
   {
     id: 11,

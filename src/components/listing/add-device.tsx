@@ -1,4 +1,4 @@
-import { DeviceTypeMap } from "@/assets/constants";
+import { DeviceTypeMap } from "@/utils/constants";
 import { useState } from "react";
 import "./add-device.scss";
 
