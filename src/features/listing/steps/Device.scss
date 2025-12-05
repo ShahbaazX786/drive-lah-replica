@@ -4,9 +4,9 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    background: #ffffff;
+    background: vars.$white;
     padding: 30px 40px;
-    border: 1px solid #00000014;
+    border: 1px solid vars.$footer-border;
     border-radius: 10px;
     font-family: vars.$font-stack;
 
@@ -28,8 +28,9 @@
 @media (max-width:768px) {
     .wrapper {
         width: auto;
+        border: none;
 
-        h1 {
+         h1 {
             width: auto;
             font-size: 28px;
         }

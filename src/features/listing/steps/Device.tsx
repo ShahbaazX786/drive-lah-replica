@@ -1,4 +1,4 @@
-import AddDevice from "@/components/device-management/add-device";
+import AddDevice from "@/components/listing/add-device";
 import "./Device.scss";
 const Device = () => {
   return (
