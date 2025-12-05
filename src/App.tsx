@@ -9,7 +9,10 @@ export default function App() {
       <Header />
       <section className="global-wrapper">
         <Routes>
-          <Route path="/" element={<Navigate to="/listing" replace />} />
+          <Route
+            path="/"
+            element={<Navigate to="/listing/subscription" replace />}
+          />
           <Route path="listing/*" element={<ListingLayout />} />
         </Routes>
         <NextListItemButton />
