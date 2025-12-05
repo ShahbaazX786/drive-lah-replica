@@ -1,8 +1,10 @@
 import { DeviceTypeMap } from "@/utils/constants";
 import { useState } from "react";
 import "./add-device.scss";
+import { useIsMobile } from "@/utils/hooks";
 
 const AddDevice = ({ deviceId }: { deviceId: number }) => {
+  const isMobile = useIsMobile();
   const [isBringingOwnDevice, setIsBringingOwnDevice] = useState(false);
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
 
@@ -71,7 +73,11 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
             name="device-serial-number"
             type="text"
             className="device-serial-input"
-            placeholder="Enter the serial number of the device"
+            placeholder={
+              isMobile
+                ? "Enter the serial number"
+                : "Enter the serial number of the device"
+            }
           />
         </section>
 
