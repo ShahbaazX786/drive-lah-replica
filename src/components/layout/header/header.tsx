@@ -12,8 +12,8 @@ const Header = () => {
         <img src={BrandLogo} alt="Drive Lah Logo" className="brand-logo" />
       </div>
       <HiOutlineUserCircle size={28} className="mobile-menu" />
-      <nav className="flex-row-sbc gap hide-mobile">
-        <ul className="flex-row-sbc gap">
+      <nav className="gap hide-mobile">
+        <ul className="gap">
           {navMenu.map((item) => (
             <li key={item.id}>{item.title}</li>
           ))}
