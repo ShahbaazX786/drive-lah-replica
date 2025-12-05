@@ -4,6 +4,7 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
+    margin-right: 10px;
     background: vars.$white;
     padding: 30px 40px;
     border: 1px solid vars.$footer-border;
@@ -27,6 +28,7 @@
 
 @media (max-width:768px) {
     .wrapper {
+        margin-right: 0;
         padding: 0;
         width: auto;
         border: none;

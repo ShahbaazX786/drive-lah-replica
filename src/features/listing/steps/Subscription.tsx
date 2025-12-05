@@ -1,4 +1,4 @@
-import { subscriptionPlans as plans } from "@/assets/constants";
+import { subscriptionPlans as plans } from "@/utils/constants";
 import lock from "@/assets/icons/Lock.svg";
 import locationMarker from "@/assets/icons/map-marker.svg";
 import mileage from "@/assets/icons/mileage.svg";
@@ -8,10 +8,15 @@ import "./Subscription.scss";
 import { useListingStore } from "@/store/listing.store";
 
 const Subscription = () => {
-  const { selectedPlan, selectedAddOn, setSelectedPlan } = useListingStore();
+  const { selectedPlan, selectedAddOn, setSelectedPlan, resetSubscription } =
+    useListingStore();
 
   const handlePlanSelection = (id: string) => {
-    setSelectedPlan(selectedPlan === id ? "" : id);
+    const isSamePlanSelected = selectedPlan === id ? "" : id;
+    if (isSamePlanSelected) {
+      resetSubscription();
+    }
+    setSelectedPlan(isSamePlanSelected);
   };
 
   return (

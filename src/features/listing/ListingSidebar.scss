@@ -6,14 +6,16 @@
     justify-content: center;
     align-items: start;
     max-width: 200px;
-    margin-left: 50px;
+    margin-top: 40px;
 }
 
 .step {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+    min-width: 200px;
     font-family: vars.$font-stack;
     font-size: 22px;
     font-weight: 700;

@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 70px;
     margin-bottom: 100px;
 }
 
@@ -18,6 +19,9 @@
 }
 
 @media (max-width:768px) {
+    .listing-wrapper{
+        margin-top: 0;
+    }
     .listing-routes-wrapper {
         padding: 20px;
         flex-direction: column;

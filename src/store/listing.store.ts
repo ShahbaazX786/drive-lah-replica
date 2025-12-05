@@ -1,8 +1,15 @@
+import { stepperForm } from "@/utils/constants";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { cardDataType } from "./listing.store.types";
 
 interface ListingStore {
+  // SideBar
+  steps: typeof stepperForm;
+  setSteps: (steps: typeof stepperForm) => void;
+  goToStep: (id: number) => void;
+
+  // Subscription
   currentStep: number;
   setCurrentStep: (step: number) => void;
 
@@ -14,14 +21,27 @@ interface ListingStore {
 
   cardData: cardDataType;
   setCardData: (field: keyof cardDataType, value: string) => void;
-
+  resetCardData: () => void;
   resetSubscription: () => void;
 }
 
 export const useListingStore = create<ListingStore>()(
   persist(
     (set) => ({
-      currentStep: 1,
+      steps: stepperForm,
+      setSteps: (steps) => set({ steps }),
+      goToStep: (id) =>
+        set((state) => {
+          const updated = state.steps.map((step) => {
+            if (step.id === id) return { ...step, status: "active" };
+            if (step.status === "active")
+              return { ...step, status: "completed" };
+            return step;
+          });
+          return { steps: updated, currentStep: id };
+        }),
+
+      currentStep: 9,
       setCurrentStep: (step) => set({ currentStep: step }),
 
       selectedPlan: "",
@@ -38,11 +58,15 @@ export const useListingStore = create<ListingStore>()(
             [field]: value,
           },
         })),
+      resetCardData: () =>
+        set({ cardData: { number: "", expiry: "", cvc: "" } }),
 
       resetSubscription: () =>
         set({
-          currentStep: 1,
+          currentStep: 9,
           selectedPlan: "",
+          selectedAddOn: "",
+          cardData: { number: "", expiry: "", cvc: "" },
         }),
     }),
     {

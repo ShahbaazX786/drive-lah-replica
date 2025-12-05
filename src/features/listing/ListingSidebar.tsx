@@ -1,26 +1,17 @@
-import { stepperForm as initialSteps } from "@/utils/constants";
-import { useState } from "react";
+import { useListingStore } from "@/store/listing.store";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./ListingSidebar.scss";
 
 const ListingSidebar = () => {
-  const [steps, setSteps] = useState(initialSteps);
+  const { steps, goToStep } = useListingStore();
   const navigate = useNavigate();
 
   const handleSelection = (id: number, route: string) => {
-    const selected = steps.find((step) => step.id === id);
+    const step = steps.find((step) => step.id === id);
 
-    if (!selected || selected.status === "pending") return;
-
-    const updated = steps.map((step) => {
-      if (step.id === id) return { ...step, status: "active" };
-      if (step.status === "active") return { ...step, status: "completed" };
-      return step;
-    });
-
-    setSteps(updated);
-
+    if (!step || step.status === "pending") return;
+    goToStep(id);
     navigate(`/listing${route}`);
   };
 
@@ -44,7 +35,13 @@ const ListingSidebar = () => {
       </aside>
 
       <aside className="mobile-stepper-form">
-        <select>
+        <select
+          onChange={(e) => {
+            const step = steps.find((s) => s.title === e.target.value);
+            if (!step) return;
+            handleSelection(step.id, step.route);
+          }}
+        >
           {steps.map((item) => (
             <option key={item.id} value={item.title}>
               {item.title}
