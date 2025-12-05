@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/layout/header/header";
 import ListingLayout from "./features/listing/ListingLayout";
-import Footer from "./components/layout/footer/footer";
+import NextListItemButton from "./components/listing/NextListItemButton";
 
 export default function App() {
   return (
@@ -12,8 +12,8 @@ export default function App() {
           <Route path="/" element={<Navigate to="/listing" replace />} />
           <Route path="listing/*" element={<ListingLayout />} />
         </Routes>
+        <NextListItemButton />
       </section>
-      <Footer />
     </>
   );
 }

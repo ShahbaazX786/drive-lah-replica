@@ -1,6 +1,6 @@
-import "./footer.scss";
+import "./NextListItemButton.scss";
 
-const Footer = () => {
+const NextListItemButton = () => {
   return (
     <section id="bottom-navigation-wrapper">
       <section id="bottom-navigation">
@@ -10,4 +10,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default NextListItemButton;
