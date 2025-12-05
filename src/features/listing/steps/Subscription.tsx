@@ -4,14 +4,14 @@ import locationMarker from "@/assets/icons/map-marker.svg";
 import mileage from "@/assets/icons/mileage.svg";
 import CardDetails from "@/components/listing/CardDetails";
 import SelectableButton from "@/components/ui/selectable-button";
-import { useState } from "react";
 import "./Subscription.scss";
+import { useListingStore } from "@/store/listing.store";
 
 const Subscription = () => {
-  const [selectedPlan, setSelectedPlan] = useState("");
+  const { selectedPlan, selectedAddOn, setSelectedPlan } = useListingStore();
 
   const handlePlanSelection = (id: string) => {
-    setSelectedPlan((prev) => (prev === id ? "" : id));
+    setSelectedPlan(selectedPlan === id ? "" : id);
   };
 
   return (
@@ -63,19 +63,28 @@ const Subscription = () => {
           <p>Select add-ons for your subscription</p>
           <section id="subscription-buttons">
             <SelectableButton label="BYO secondary GPS - $5/month" />
-            <SelectableButton label="BYO lockbox - $10/month" comingSoon />
+            {selectedPlan === "good-mates" && (
+              <SelectableButton label="BYO lockbox - $10/month" />
+            )}
+            {selectedPlan === "best-mates" && (
+              <SelectableButton label="Between trip insurance" comingSoon />
+            )}
           </section>
           <hr className="separator" />
 
-          <section id="subscription-card-details">
-            <p>Add card details</p>
-            <CardDetails />
-            <span>
-              You will not be charged right now. Subscription will only start
-              once your listing is published and live.
-            </span>
-          </section>
-          <hr className="separator" />
+          {(selectedPlan !== "just-mates" || selectedAddOn) && (
+            <>
+              <section id="subscription-card-details">
+                <p>Add card details</p>
+                <CardDetails />
+                <span>
+                  You will not be charged right now. Subscription will only
+                  start once your listing is published and live.
+                </span>
+              </section>
+              <hr className="separator" />
+            </>
+          )}
         </section>
       )}
 
