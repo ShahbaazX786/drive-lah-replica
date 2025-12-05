@@ -1,0 +1,37 @@
+@use "@/styles/_variables.scss" as vars;
+
+.mobile-stepper-form {
+    width: 100%;
+    display: flex;
+    border: "1px solid vars.$button-border-color";
+    border-radius: 4px;
+    font-size: 20px;
+    color: vars.$button-border-color;
+    background: "#fff";
+
+    select {
+        font-family: vars.$font-stack;
+        font-size: 20px;
+        color: vars.$tertiary-color;
+        margin: auto;
+        width: 100%;
+        padding: 15px 10px;
+        border: 1px solid vars.$border-color;
+
+        option {
+            padding: 100px 10px;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .stepper-form {
+        display: none;
+    }
+}
+
+@media (min-width:769px) {
+    .mobile-stepper-form {
+        display: none;
+    }
+}
