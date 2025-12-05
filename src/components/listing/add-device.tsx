@@ -1,15 +1,20 @@
+import { useListingStore } from "@/store/listing.store";
 import { DeviceTypeMap } from "@/utils/constants";
-import { useState } from "react";
-import "./add-device.scss";
 import { useIsMobile } from "@/utils/hooks";
+import "./add-device.scss";
 
 const AddDevice = ({ deviceId }: { deviceId: number }) => {
   const isMobile = useIsMobile();
-  const [isBringingOwnDevice, setIsBringingOwnDevice] = useState(false);
-  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
+
+  const { devices, setDeviceState } = useListingStore();
+  const device = devices[deviceId];
 
   const deviceType = DeviceTypeMap[deviceId];
   const isType4 = deviceId === 4;
+
+  const handleBYOD = (deviceId: number, field: any, value: any) => {
+    setDeviceState(deviceId, field, value);
+  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -20,7 +25,7 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
       return;
     }
 
-    setUploadedImage(file);
+    setDeviceState(deviceId, "uploadedImage", file.name);
   };
 
   return (
@@ -46,8 +51,14 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
               <label className="switch">
                 <input
                   type="checkbox"
-                  checked={isBringingOwnDevice}
-                  onChange={() => setIsBringingOwnDevice((prev) => !prev)}
+                  checked={device.isBringingOwnDevice}
+                  onChange={() =>
+                    handleBYOD(
+                      deviceId,
+                      "isBringingOwnDevice",
+                      !device.isBringingOwnDevice
+                    )
+                  }
                 />
                 <span className="slider"></span>
               </label>
@@ -64,7 +75,7 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
       <section
         id="device-form"
         className={`device-form-container ${
-          isType4 ? "show" : isBringingOwnDevice ? "show" : "hide"
+          isType4 ? "show" : device.isBringingOwnDevice ? "show" : "hide"
         }`}
       >
         <section id="device-form-serial-input">
@@ -73,6 +84,10 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
             name="device-serial-number"
             type="text"
             className="device-serial-input"
+            value={device.serialNumber ?? ""}
+            onChange={(e) =>
+              handleBYOD(deviceId, "serialNumber", e.target.value)
+            }
             placeholder={
               isMobile
                 ? "Enter the serial number"
@@ -92,8 +107,8 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
               onChange={handleImageUpload}
               className="device-image-input"
             />
-            {uploadedImage ? (
-              <p className="uploadedText">{uploadedImage.name}</p>
+            {device.uploadedImage ? (
+              <p className="uploadedText">{device.uploadedImage}</p>
             ) : (
               <p className="uploadText">Click to upload</p>
             )}
