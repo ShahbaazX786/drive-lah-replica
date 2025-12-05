@@ -33,7 +33,7 @@
 }
 
 .step-active {
-    color: #00A3AD;
+    color: vars.$primary-color;
     font-weight: 900;
     border-left: none;
 
@@ -44,16 +44,16 @@
         top: 6px;
         bottom: 6px;
         width: 5px;
-        background: #00A3AD;
+        background: vars.$primary-color;
         border-radius: 10px;
     }
 }
 
 .step-completed {
-    color: #026786;
+    color: vars.$secondary-color;
 
     .step-check {
-        color: #026786;
+        color: vars.$secondary-color;
         font-size: 20px;
     }
 }

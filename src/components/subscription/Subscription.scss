@@ -8,9 +8,9 @@
     justify-content: space-between;
     gap: 10px;
     align-items: start;
-    background: #ffffff;
+    background: vars.$white;
     padding: 30px 40px;
-    border: 1px solid #00000014;
+    border: 1px solid vars.$footer-border;
     border-radius: 8px;
     font-family: vars.$font-stack;
 
@@ -90,7 +90,7 @@
 
     &.selected {
         border-color: vars.$primary-color;
-        background: #00A3AD0D; 
+        background: vars.$primary-color; 
         box-shadow: 0 0 0 1px vars.$primary-color;
     
         p,
