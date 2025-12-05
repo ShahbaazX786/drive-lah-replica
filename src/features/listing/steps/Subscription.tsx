@@ -2,7 +2,7 @@ import { subscriptionPlans as plans } from "@/assets/constants";
 import lock from "@/assets/icons/Lock.svg";
 import locationMarker from "@/assets/icons/map-marker.svg";
 import mileage from "@/assets/icons/mileage.svg";
-import CardDetails from "@/components/subscription/CardDetails";
+import CardDetails from "@/components/listing/CardDetails";
 import SelectableButton from "@/components/ui/selectable-button";
 import { useState } from "react";
 import "./Subscription.scss";
