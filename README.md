@@ -10,7 +10,7 @@
 
 This task is a Prototype on two of the pages of Drive lah built purely based on the designs provided.
 
-> Live URL: https://drive-lah-nine.vercel.app/listing/subscription
+> Live URL: https://drive-lah-nine.vercel.app
 
 ## Tech Stack
 
