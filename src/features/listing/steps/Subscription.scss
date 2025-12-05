@@ -1,7 +1,7 @@
 @use "@/styles/_variables.scss" as vars;
 
 #subscription-wrapper {
-    width: 100%;
+    width: auto;
     max-width: 1000px;
     display: flex;
     flex-direction: column;
@@ -26,6 +26,11 @@
         color: vars.$tertiary-color;
         font-size: 20px;
     }
+
+    @media (max-width:768px) {
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 
@@ -36,7 +41,7 @@
     align-items: start;
     gap: 20px;
     width: 100%;
-    
+
     h2 {
         font-family: vars.$font-stack;
         font-weight: 500;
@@ -59,24 +64,29 @@
 }
 
 #subscription-plans {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 
-    p, li{
+    p,
+    li {
         font-family: vars.$font-stack;
         font-weight: 500;
     }
+
 }
 
 #subscription-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
     background: vars.$button-color;
     padding: 15px;
     border: 1px solid vars.$button-border-color;
     border-radius: 8px;
     cursor: pointer;
+    max-width: 400px;
     transition: all 0.25s ease;
 
     p {
@@ -92,6 +102,7 @@
         font-size: 15px;
         color: vars.$tertiary-color;
         margin-bottom: 10px;
+        text-align: left;
     }
 
     &.selected {
@@ -114,13 +125,14 @@
     align-items: baseline;
     width: 100%;
     font-family: vars.$font-stack;
+
     .plan-price {
         text-align: left;
         color: vars.$secondary-color;
         font-weight: 900;
         font-size: 22px;
     }
-    
+
     .plan-frequency {
         color: vars.$secondary-color;
         font-weight: 300;
@@ -159,6 +171,10 @@
         justify-content: space-between;
         gap: 20px;
         align-items: start;
+
+        @media (max-width:990px) {
+            flex-direction: column;
+        }
     }
 }
 
@@ -198,5 +214,32 @@
         color: vars.$primary-color;
         font-weight: 700;
         font-size: 20px;
+    }
+}
+
+
+@media (max-width:1220px) {
+    #subscription-plans {
+        margin-top: -10px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: start;
+    }
+    
+}
+
+@media (max-width:1000px) {
+    #subscription-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:900px) {
+    #subscription-plans {
+        width: 100%;
+        margin-top: -10px;
+        grid-template-columns: 1fr;
+    }
+    #subscription-card{
+        width: 100%;
     }
 }
