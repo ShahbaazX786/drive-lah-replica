@@ -1,19 +1,19 @@
-import Footer from "./components/layout/footer/footer";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/layout/header/header";
-import StepperForm from "./components/layout/sidebar/stepperForm";
-import Subscription from "./components/subscription/Subscription";
+import ListingLayout from "./features/listing/ListingLayout";
+import Footer from "./components/layout/footer/footer";
 
-function App() {
+export default function App() {
   return (
     <>
       <Header />
-      <div className="main-page">
-        <StepperForm />
-        <Subscription />
-      </div>
+      <section className="global-wrapper">
+        <Routes>
+          <Route path="/" element={<Navigate to="/listing" replace />} />
+          <Route path="listing/*" element={<ListingLayout />} />
+        </Routes>
+      </section>
       <Footer />
     </>
   );
 }
-
-export default App;
