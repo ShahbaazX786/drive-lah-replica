@@ -20,7 +20,7 @@ const Subscription = () => {
         <h1>Subscription Plan</h1>
         <p>Select the ideal subscription plan for your listing.</p>
       </section>
-      <hr />
+      <hr className="separator" />
 
       <section id="subscription-plan-wrapper">
         <h2>Select your plan</h2>
@@ -55,6 +55,7 @@ const Subscription = () => {
             </button>
           ))}
         </section>
+        <hr className="separator" />
       </section>
 
       {selectedPlan && (
@@ -64,6 +65,7 @@ const Subscription = () => {
             <SelectableButton label="BYO secondary GPS - $5/month" />
             <SelectableButton label="BYO lockbox - $10/month" comingSoon />
           </section>
+          <hr className="separator" />
 
           <section id="subscription-card-details">
             <p>Add card details</p>
@@ -73,10 +75,10 @@ const Subscription = () => {
               once your listing is published and live.
             </span>
           </section>
+          <hr className="separator" />
         </section>
       )}
 
-      <hr />
       <section id="subscription-help">
         <p>
           Learn more about the plans here -{" "}

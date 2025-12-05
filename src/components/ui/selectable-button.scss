@@ -21,7 +21,7 @@
 
 .option-btn {
     width: 100%;
-    padding: 12px 16px;
+    padding: 15px 15px;
     border: 1px solid vars.$button-border-color;
     border-radius: 8px;
     background: vars.$button-color;
@@ -29,9 +29,10 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    font-size: 16px;
-    color: vars.$primary-color;
-    transition: 0.25s ease;
+    font-size: 20px;
+    font-weight: 500;
+    color: vars.$secondary-color;
+    transition: 0.3s ease-out;
 
     &:hover {
         background: vars.$button-color;
@@ -43,7 +44,7 @@
     }
 
     &.disabled {
-        opacity: 0.5;
+        opacity: 0.9;
         cursor: not-allowed;
     }
 }
@@ -51,12 +52,12 @@
 .circle {
     width: 18px;
     height: 18px;
-    border: 2px solid vars.$secondary-color;
+    border: 2px solid vars.$primary-color;
     border-radius: 50%;
     transition: 0.2s ease;
 }
 
 .circle-selected {
-    background: vars.$secondary-color;
-    border-color: vars.$secondary-color;
+    background: vars.$primary-color;
+    border-color: vars.$primary-color;
 }

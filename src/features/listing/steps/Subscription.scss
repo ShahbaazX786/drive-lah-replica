@@ -36,8 +36,9 @@
     align-items: start;
     gap: 20px;
     width: 100%;
-
+    
     h2 {
+        font-family: vars.$font-stack;
         font-weight: 500;
         font-size: 22px;
         color: vars.$tertiary-color;
@@ -63,6 +64,11 @@
     justify-content: space-between;
     align-items: start;
     gap: 15px;
+
+    p, li{
+        font-family: vars.$font-stack;
+        font-weight: 500;
+    }
 }
 
 #subscription-card {
@@ -107,20 +113,21 @@
     justify-content: start;
     align-items: baseline;
     width: 100%;
+    font-family: vars.$font-stack;
+    .plan-price {
+        text-align: left;
+        color: vars.$secondary-color;
+        font-weight: 900;
+        font-size: 22px;
+    }
+    
+    .plan-frequency {
+        color: vars.$secondary-color;
+        font-weight: 300;
+        font-size: 14px;
+    }
 }
 
-.plan-price {
-    text-align: left;
-    color: vars.$secondary-color;
-    font-weight: 900;
-    font-size: 22px;
-}
-
-.plan-frequency {
-    color: vars.$secondary-color;
-    font-weight: 300;
-    font-size: 14px;
-}
 
 
 #subscription-addons {
@@ -163,6 +170,7 @@
     width: 100%;
 
     p {
+        margin-top: 0px;
         margin-bottom: 20px;
     }
 
@@ -179,6 +187,7 @@
     font-size: 20px;
     font-weight: 500;
     width: 100%;
+    margin-top: 20px;
 
     p {
         color: vars.$tertiary-color;
@@ -187,5 +196,7 @@
 
     a {
         color: vars.$primary-color;
+        font-weight: 700;
+        font-size: 20px;
     }
 }
