@@ -49,8 +49,17 @@
 }
 
 .step-default-style{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 100%;
   width: 1000px;
+}
+
+@media (max-width:1024px){
+  .step-default-style {
+      width: 500px;
+    }
 }
 
 @media (max-width:768px) {
@@ -58,5 +67,9 @@
     width: calc(100% + 130px);
     margin-left:-70px;
     overflow-x: hidden;
+  }
+
+  .step-default-style{
+    width: auto;
   }
 }
