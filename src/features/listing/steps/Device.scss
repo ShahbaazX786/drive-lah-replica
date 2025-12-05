@@ -27,12 +27,15 @@
 
 @media (max-width:768px) {
     .wrapper {
+        padding: 0;
         width: auto;
         border: none;
 
          h1 {
             width: auto;
             font-size: 28px;
+            font-weight: 900;
+            margin-top: 15px;
         }
     }
 
