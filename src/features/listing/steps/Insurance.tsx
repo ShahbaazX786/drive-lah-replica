@@ -1,5 +1,5 @@
 const Insurance = () => {
-  return <div>Insurance</div>;
+  return <div className="step-default-style">Insurance</div>;
 };
 
 export default Insurance;

@@ -1,5 +1,5 @@
 const Location = () => {
-  return <div>Location</div>;
+  return <div className="step-default-style">Location</div>;
 };
 
 export default Location;

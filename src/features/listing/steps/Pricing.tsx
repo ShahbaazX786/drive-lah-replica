@@ -1,5 +1,5 @@
 const Pricing = () => {
-  return <div>Pricing</div>;
+  return <div className="step-default-style">Pricing</div>;
 };
 
 export default Pricing;

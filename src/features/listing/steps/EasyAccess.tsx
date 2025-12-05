@@ -1,5 +1,5 @@
 const EasyAccess = () => {
-  return <div>EasyAccess</div>;
+  return <div className="step-default-style">EasyAccess</div>;
 };
 
 export default EasyAccess;

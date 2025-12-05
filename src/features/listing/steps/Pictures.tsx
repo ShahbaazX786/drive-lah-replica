@@ -1,5 +1,5 @@
 const Pictures = () => {
-  return <div>Pictures</div>;
+  return <div className="step-default-style">Pictures</div>;
 };
 
 export default Pictures;

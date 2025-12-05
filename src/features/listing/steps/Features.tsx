@@ -1,5 +1,5 @@
 const Features = () => {
-  return <div>Features</div>;
+  return <div className="step-default-style">Features</div>;
 };
 
 export default Features;

@@ -1,5 +1,5 @@
 const Rules = () => {
-  return <div>Rules</div>;
+  return <div className="step-default-style">Rules</div>;
 };
 
 export default Rules;

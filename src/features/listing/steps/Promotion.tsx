@@ -1,5 +1,5 @@
 const Promotion = () => {
-  return <div>Promotion</div>;
+  return <div className="step-default-style">Promotion</div>;
 };
 
 export default Promotion;
