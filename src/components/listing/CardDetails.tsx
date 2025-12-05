@@ -11,7 +11,7 @@ const CardDetails = () => {
         type="text"
         placeholder="1234 5678 1234 5678"
         className="card-number"
-        maxLength={19}
+        maxLength={16}
       />
 
       <input

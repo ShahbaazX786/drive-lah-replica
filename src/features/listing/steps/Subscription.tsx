@@ -20,7 +20,7 @@ const Subscription = () => {
         <h1>Subscription Plan</h1>
         <p>Select the ideal subscription plan for your listing.</p>
       </section>
-      <hr className="separator" />
+      <hr className="separator hide-sm" />
 
       <section id="subscription-plan-wrapper">
         <h2>Select your plan</h2>

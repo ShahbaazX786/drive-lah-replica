@@ -30,6 +30,23 @@
     @media (max-width:768px) {
         justify-content: space-between;
         align-items: center;
+        border: none;
+        padding: 0;
+
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        #subscription-heading {
+            font-size: 18px;
+            margin-right: auto;
+            margin-top: 20px;
+        }
+
+        .hide-sm {
+            display: none;
+        }
     }
 }
 
@@ -138,6 +155,12 @@
         font-weight: 300;
         font-size: 14px;
     }
+
+        @media (max-width:768px) {
+            .plan-price{
+                font-size: 20px;
+            }
+        }
 }
 
 
@@ -174,6 +197,17 @@
 
         @media (max-width:990px) {
             flex-direction: column;
+        }
+    }
+
+    @media (max-width:768px) {
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            text-align: left;
         }
     }
 }
@@ -215,6 +249,13 @@
         font-weight: 700;
         font-size: 20px;
     }
+
+        @media (max-width:768px) {
+            p,a{
+                font-size: 18px;
+            }
+        }
+
 }
 
 
@@ -224,7 +265,7 @@
         grid-template-columns: repeat(2, 1fr);
         justify-items: start;
     }
-    
+
 }
 
 @media (max-width:1000px) {
@@ -239,7 +280,8 @@
         margin-top: -10px;
         grid-template-columns: 1fr;
     }
-    #subscription-card{
+
+    #subscription-card {
         width: 100%;
     }
 }

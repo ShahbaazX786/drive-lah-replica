@@ -12,6 +12,7 @@
     background: vars.$white;
 
     input {
+        font-weight: 500;
         border: none;
         outline: none;
         font-size: 14px;
@@ -38,4 +39,36 @@
 .cvc {
     max-width: 50px;
     text-align: center;
+}
+
+@media (max-width:768px) {
+    .card-input-wrapper {
+        max-width: 300px;
+        width: auto;
+        padding: 15px 5px;
+        gap: 0px;
+
+        .card-number {
+            max-width: 155px;
+        }
+
+        input {
+            font-size: 16px;
+        }
+
+    }
+
+    .card-icon {
+        font-size: 14px;
+    }
+
+    .expiry {
+        max-width: 60px;
+        text-align: left;
+    }
+
+    .cvc {
+        max-width: 40px;
+        text-align: left;
+    }
 }
