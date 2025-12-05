@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./selectable-button.scss";
+import { useListingStore } from "@/store/listing.store";
 
 interface Props {
   label: string;
@@ -7,7 +7,15 @@ interface Props {
 }
 
 const SelectableButton = ({ label, comingSoon }: Props) => {
-  const [selected, setSelected] = useState(false);
+  const { selectedAddOn, setSelectedAddOn } = useListingStore();
+
+  const isSelected = selectedAddOn === label;
+
+  const handleClick = () => {
+    if (comingSoon) return;
+
+    setSelectedAddOn(isSelected ? "" : label);
+  };
 
   return (
     <div className="option-wrapper">
@@ -15,15 +23,17 @@ const SelectableButton = ({ label, comingSoon }: Props) => {
 
       <button
         type="button"
-        className={`option-btn ${selected ? "selected" : ""} ${
+        className={`option-btn ${isSelected ? "selected" : ""} ${
           comingSoon ? "disabled" : ""
         }`}
-        onClick={() => !comingSoon && setSelected((prev) => !prev)}
+        onClick={handleClick}
         disabled={comingSoon}
       >
         <span>{label}</span>
 
-        <span className={`circle ${selected ? "circle-selected" : ""}`}></span>
+        <span
+          className={`circle ${isSelected ? "circle-selected" : ""}`}
+        ></span>
       </button>
     </div>
   );
