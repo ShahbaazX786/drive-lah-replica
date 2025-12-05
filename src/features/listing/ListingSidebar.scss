@@ -1,5 +1,63 @@
 @use "@/styles/_variables.scss" as vars;
 
+.stepper-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    max-width: 200px;
+    margin-left: 50px;
+}
+
+.step {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: vars.$font-stack;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 10px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.step-pending {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.step-active {
+    color: vars.$primary-color;
+    font-weight: 900;
+    border-left: none;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        bottom: 6px;
+        width: 5px;
+        background: vars.$primary-color;
+        border-radius: 10px;
+    }
+}
+
+.step-completed {
+    color: vars.$secondary-color;
+
+    .step-check {
+        color: vars.$secondary-color;
+        font-size: 20px;
+    }
+}
+
 .mobile-stepper-form {
     width: 100%;
     display: flex;
