@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+<center style>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div style="background:#111; padding:20px; display:inline-block; border-radius:12px;">
+  <img src="src/assets/icons/DriveLah.png" alt="DriveLah Logo" width="100%" />
+</div>
 
-Currently, two official plugins are available:
+</center>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Drive lah test
 
-## React Compiler
+This task is a Prototype on two of the pages of Drive lah built purely based on the designs provided.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> Live URL: https://drive-lah-nine.vercel.app/listing/subscription
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- React Router Dom
+- SCSS
+- Vite (Bundler)
+- Zustand (State Management)
+- react-icons (external lib) [Had to use as there were few icons missing in the designs.]
+- Custom Hooks
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> Why Zustand?
+> Ans: As the requirement was to make use of localStorage. So, it was a better, fast and minimal option to use Zustand rather than manually setting up + cleaning up with react context.
+> I used Zustand's persist middleware to store data to localStorage with no / less clean up or syncing of variables from localStorage to app.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Things to Note:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Only the two pages are developed based on the designs.
+- So, Make sure to visit **/listing/Subscription** and **/listing/Device** only.
+- As going out of the flow might look weird as they were not developed.
+- I've built the folder structure imagining scalability of the app.
+- Navigation Menu for the mobile view is just a placeholder and non-functional.
+- There are no data validations for card details.
+- Page will retain data even if refreshed.
+
+### Project Screenshots
+
+| Subscription Page (Desktop View)                 |
+| ------------------------------------------------ |
+| ![Default State](ProjectSnaps/ProjectSnap-1.png) |
+
+| Plan Selection                                    |
+| ------------------------------------------------- |
+| ![Plan Selection](ProjectSnaps/ProjectSnap-2.png) |
+
+| Plan Selection (Single - Add-on)                    | Plan Selection (Multi - Add-on)                         |
+| --------------------------------------------------- | ------------------------------------------------------- |
+| ![Selecting Add-on](ProjectSnaps/ProjectSnap-3.png) | ![Multi Add-on Options](ProjectSnaps/ProjectSnap-4.png) |
+
+| Device Management (Desktop View)                 |
+| ------------------------------------------------ |
+| ![Default State](ProjectSnaps/ProjectSnap-5.png) |
+
+| BYOD - Data Filled State                             | BYOD - Other Devices                             |
+| ---------------------------------------------------- | ------------------------------------------------ |
+| ![Data filled State](ProjectSnaps/ProjectSnap-6.png) | ![Other devices](ProjectSnaps/ProjectSnap-7.png) |
+
+| Subscription (Mobile View)                         | Subscription (Plan Selection)                        | Device Management (Mobile View)                          |
+| -------------------------------------------------- | ---------------------------------------------------- | -------------------------------------------------------- |
+| ![MV Subscription](ProjectSnaps/ProjectSnap-8.png) | ![MV Plan Selection](ProjectSnaps/ProjectSnap-9.png) | ![MV Device Management](ProjectSnaps/ProjectSnap-10.png) |
+
+## Wanna Run in your Machine?
+
+Clone the project
+
+```bash
+  git clone https://github.com/ShahbaazX786/drive-lah-replica.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Go to the project directory
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+  cd drive-lah-replica
 ```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run s or npm run start
+```
+
+## Environment Variables
+
+This is a very simple UI prototype focused on UI, typography, web storage and a little bit of functionality. so no env variables needed.
+
+## Feedback
+
+##### If you have any feedback, please reach out to me in below ways:
+
+- LinkedIn - https://www.linkedin.com/in/shaik-shahbaaz-alam/
+- Github - Just Dm me or raise a PR.
+- Twitter / X - https://twitter.com/shahbaazx24
+- Email - shahbaazalam78@gmail.com
+
+## Support
+
+For support, you can star 🌟 this repo or follow me on my social handles.s
