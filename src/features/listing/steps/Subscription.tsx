@@ -1,5 +1,5 @@
 import { subscriptionPlans as plans } from "@/utils/constants";
-import lock from "@/assets/icons/Lock.svg";
+import lock from "@/assets/icons/lock.svg";
 import locationMarker from "@/assets/icons/map-marker.svg";
 import mileage from "@/assets/icons/mileage.svg";
 import CardDetails from "@/components/listing/CardDetails";
