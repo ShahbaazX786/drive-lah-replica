@@ -16,7 +16,8 @@
         border: none;
         outline: none;
         font-size: 14px;
-        color: vars.$placeholder-color;
+        font-family: vars.$font-stack;
+        color: vars.$secondary-color;
         flex: 1;
         font-size: 18px;
 
