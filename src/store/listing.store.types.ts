@@ -27,10 +27,17 @@ type cardDataType = {
   cvc: "";
 };
 
+type DeviceStateType = {
+  isBringingOwnDevice: boolean;
+  uploadedImage: string | null;
+  serialNumber: string | null;
+};
+
 export type {
   listingSidebarType,
   Step,
   StepStatus,
   subscriptionPlanType,
   cardDataType,
+  DeviceStateType,
 };

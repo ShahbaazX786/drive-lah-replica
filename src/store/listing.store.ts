@@ -1,7 +1,7 @@
-import { stepperForm } from "@/utils/constants";
+import { DefaultDeviceState, stepperForm } from "@/utils/constants";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { cardDataType } from "./listing.store.types";
+import type { cardDataType, DeviceStateType } from "./listing.store.types";
 
 interface ListingStore {
   // SideBar
@@ -23,6 +23,14 @@ interface ListingStore {
   setCardData: (field: keyof cardDataType, value: string) => void;
   resetCardData: () => void;
   resetSubscription: () => void;
+
+  // Device Management
+  devices: Record<number, DeviceStateType>;
+  setDeviceState: (
+    deviceId: number,
+    field: keyof DeviceStateType,
+    value: string
+  ) => void;
 }
 
 export const useListingStore = create<ListingStore>()(
@@ -68,6 +76,18 @@ export const useListingStore = create<ListingStore>()(
           selectedAddOn: "",
           cardData: { number: "", expiry: "", cvc: "" },
         }),
+
+      devices: DefaultDeviceState,
+      setDeviceState: (deviceId, field, value) =>
+        set((state) => ({
+          devices: {
+            ...state.devices,
+            [deviceId]: {
+              ...state.devices[deviceId],
+              [field]: value,
+            },
+          },
+        })),
     }),
     {
       name: "car-listing-store",

@@ -125,4 +125,17 @@ const DeviceTypeMap: Record<number, string> = {
   4: "Lockbox",
 };
 
-export { navMenu, stepperForm, subscriptionPlans, DeviceTypeMap };
+const DefaultDeviceState = {
+  1: { isBringingOwnDevice: false, uploadedImage: null, serialNumber: "" },
+  2: { isBringingOwnDevice: false, uploadedImage: null, serialNumber: "" },
+  3: { isBringingOwnDevice: false, uploadedImage: null, serialNumber: "" },
+  4: { isBringingOwnDevice: false, uploadedImage: null, serialNumber: "" },
+};
+
+export {
+  navMenu,
+  stepperForm,
+  subscriptionPlans,
+  DeviceTypeMap,
+  DefaultDeviceState,
+};
