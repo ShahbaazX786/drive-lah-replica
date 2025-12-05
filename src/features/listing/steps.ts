@@ -1,0 +1,11 @@
+export { default as Location } from "./steps/Location";
+export { default as About } from "./steps/About";
+export { default as Features } from "./steps/Features";
+export { default as Rules } from "./steps/Rules";
+export { default as Pricing } from "./steps/Pricing";
+export { default as Promotion } from "./steps/Promotion";
+export { default as Pictures } from "./steps/Pictures";
+export { default as Insurance } from "./steps/Insurance";
+export { default as Subscription } from "./steps/Subscription";
+export { default as Device } from "./steps/Device";
+export { default as EasyAccess } from "./steps/EasyAccess";
