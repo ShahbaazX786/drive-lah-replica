@@ -7,7 +7,10 @@ export default function App() {
   return (
     <>
       <Header />
-      <section className="global-wrapper">
+      <a href="#main-content" className="skip-to-content">
+        Skip to main content
+      </a>
+      <section className="global-wrapper" id="main-content">
         <Routes>
           <Route
             path="/"

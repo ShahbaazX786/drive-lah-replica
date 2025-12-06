@@ -35,7 +35,8 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
         <section id="device-type-input">
           <label htmlFor="device">Device type</label>
           <input
-            readOnly
+            id="device"
+            disabled
             type="text"
             value={deviceType}
             name="device"
@@ -48,8 +49,9 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
             <div className="top-row">
               <h3>Bringing your own device?</h3>
 
-              <label className="switch">
+              <label className="switch" htmlFor="switch">
                 <input
+                  id="switch"
                   type="checkbox"
                   checked={device.isBringingOwnDevice}
                   onChange={() =>
@@ -81,6 +83,7 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
         <section id="device-form-serial-input">
           <label htmlFor="device-serial-number">Serial number</label>
           <input
+            id="device-serial-number"
             name="device-serial-number"
             type="text"
             className="device-serial-input"
@@ -102,6 +105,7 @@ const AddDevice = ({ deviceId }: { deviceId: number }) => {
           </label>
           <button className="uploadBox">
             <input
+              id="device-image-upload"
               name="device-image-upload"
               type="file"
               onChange={handleImageUpload}

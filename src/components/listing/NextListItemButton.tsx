@@ -15,8 +15,11 @@ const NextListItemButton = () => {
   };
 
   return (
-    <section id="bottom-navigation-wrapper">
-      <section id="bottom-navigation">
+    <section
+      id="bottom-navigation-wrapper"
+      aria-label="Bottom navigation-wrapper"
+    >
+      <section id="bottom-navigation" aria-label="Bottom navigation">
         <button onClick={handleNext} disabled={selectedPlan === ""}>
           Next
         </button>

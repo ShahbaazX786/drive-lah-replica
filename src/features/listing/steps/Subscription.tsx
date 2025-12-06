@@ -41,9 +41,11 @@ const Subscription = () => {
               <ul>
                 {plan.features.map((feature, index) => (
                   <li key={feature}>
-                    {index === 0 && <img src={locationMarker} />}
-                    {index === 1 && <img src={mileage} />}
-                    {index === 2 && <img src={lock} />}
+                    {index === 0 && (
+                      <img alt="location mark icon" src={locationMarker} />
+                    )}
+                    {index === 1 && <img alt="mileage icon" src={mileage} />}
+                    {index === 2 && <img alt="lock icon" src={lock} />}
                     {feature}
                   </li>
                 ))}
